@@ -106,6 +106,28 @@
   </entry>
   
   <entry>
+    <title>如何在 GitHub 上给开源项目贡献代码</title>
+    <link href="http://example.com/2019/07/10/7_%E5%9C%A8GitHub%E4%B8%8A%E7%BB%99%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B4%A1%E7%8C%AE%E4%BB%A3%E7%A0%81/"/>
+    <id>http://example.com/2019/07/10/7_%E5%9C%A8GitHub%E4%B8%8A%E7%BB%99%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B4%A1%E7%8C%AE%E4%BB%A3%E7%A0%81/</id>
+    <published>2019-07-10T10:00:00.000Z</published>
+    <updated>2019-07-10T10:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;GitHub 是什么？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GitHub 是通过 Git 进行版本控制的软件源代码托管服务。 截止到 2015年，GitHub 已经有超过 2800 万注册用户和 7900 万代码库。事实上已经成为了世界上最大的代码存放网站和开源社区。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="http://example.com/categories/Git/"/>
+    
+    
+    <category term="GitHub" scheme="http://example.com/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Git配置SSH秘钥</title>
     <link href="http://example.com/2019/07/01/6_Git%E9%85%8D%E7%BD%AESSH%E7%A7%98%E9%92%A5/"/>
     <id>http://example.com/2019/07/01/6_Git%E9%85%8D%E7%BD%AESSH%E7%A7%98%E9%92%A5/</id>
