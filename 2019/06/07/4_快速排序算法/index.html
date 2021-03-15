@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>快速排序算法 - Zhang&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Zhang&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Zhang&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta description="一、快速排序的思想 　　快速排序是生活中比较常用的一种排序算法，它的特点就像名字一样速度快、效率高。"><meta property="og:type" content="blog"><meta property="og:title" content="快速排序算法"><meta property="og:url" content="http://example.com/2019/06/07/4_%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"><meta property="og:site_name" content="Zhang&#039;s Blog"><meta property="og:description" content="一、快速排序的思想 　　快速排序是生活中比较常用的一种排序算法，它的特点就像名字一样速度快、效率高。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/gallery/covers/002_cover.svg"><meta property="article:published_time" content="2019-06-07T10:00:00.000Z"><meta property="article:modified_time" content="2019-06-10T10:00:00.000Z"><meta property="article:author" content="MooneyZW"><meta property="article:tag" content="C语言"><meta property="article:tag" content="快速排序"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/gallery/covers/002_cover.svg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2019/06/07/4_%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"},"headline":"Zhang's Blog","image":[],"datePublished":"2019-06-07T10:00:00.000Z","dateModified":"2019-06-10T10:00:00.000Z","author":{"@type":"Person","name":"MooneyZW"},"description":"一、快速排序的思想 　　快速排序是生活中比较常用的一种排序算法，它的特点就像名字一样速度快、效率高。"}</script><link rel="canonical" href="http://example.com/2019/06/07/4_%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Zhang's Blog" type="application/atom+xml">
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Zhang&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/gallery/covers/002_cover.svg" alt="快速排序算法"></span></div><article class="card-content article" role="article"><h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal"><i class="fas fa-angle-double-right"></i>快速排序算法</h1><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="${date_xml(page.date)}" title="${date_xml(page.date)}">2019-06-07</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="${date_xml(page.updated)}" title="${date_xml(page.updated)}">2019-06-10</time></span><span class="level-item"><a class="link-muted" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="level-item">14 分钟读完 (大约2146个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><div class="content"><h1 id="一、快速排序的思想"><a href="#一、快速排序的思想" class="headerlink" title="一、快速排序的思想"></a>一、快速排序的思想</h1><hr>
+<p>　　快速排序是生活中比较常用的一种排序算法，它的特点就像名字一样速度快、效率高。</p>
+<a id="more"></a>
+
+<p>　　快速排序采用的思想是分治思想，先简单的介绍一下分治的思想。分治算法的基本思想是将一个规模为 N的问题分解为 K 个规模较小的子问题，这些子问题相互独立且与原问题性质相同。</p>
+<p>　　求出子问题的解，就可以得到原问题的解。下面这张图会说明分治算法是如何进行的：将 <code>cn</code> 分成了两个 <code>cn/2</code>，转而分成了 <code>cn/4 cn/8</code>……我们通过这样一层一层的求解小规模的子问题，将其合并之后就能求出原问题的解。</p>
+<p><img src="./01.jpg" alt="快排思想"></p>
+<p>　　既然快速排序用到了分治思想，那么也就是说快速排序也就和分治算法一样为了进行排序需要先对其划分的子区间进行排序。</p>
+<p>　　其基本思想就是：在待排序的序列中选取一个值作为一个基准值，按照这个基准值得大小将这个序列划分成两个子序列，基准值会在这两个子序列的中间，一边是比基准小的，另一边就是比基准大的。这样快速排序第一次排完，我们选取的这个基准值就会出现在它该出现的位置上。</p>
+<p>　　这就是快速排序的单趟算法，也就是完成了一次快速排序。然后再对这两个子序列按照同样的方法进行排序，直到只剩下一个元素或者没有元素 的时候就停止，这时候所有的元素都出现在了该出现的位置上。</p>
+<h1 id="二、快速排序的单趟算法"><a href="#二、快速排序的单趟算法" class="headerlink" title="二、快速排序的单趟算法"></a>二、快速排序的单趟算法</h1><hr>
+<blockquote>
+<p>目前关于快速排序的单趟算法，我所熟知的只有这三种方法：左右指针法、挖坑法、前后指针法。</p>
+</blockquote>
+<h2 id="1、左右指针法："><a href="#1、左右指针法：" class="headerlink" title="1、左右指针法："></a>1、左右指针法：</h2><p>　　左右指针法实现思路：在一段区间内我们有一个值 key，从左边区间进行遍历，直到找到一个大于 key 的值就停下，然后再从右边找小于 key 的值，找到一个也停下来。我们将左右的值进行交换，这样左边那个大于 key 的值就被换到了右边，而右边那个比 key 小的值就被换到了左边。</p>
+<p>　　当左右两个指针相遇的时候就说明所有元素都与 key 做过了比较。然后再将左指针所在的元素赋值给 key。此时按照上述方法进行递归实现 <code>[left, key]和 [key+1, right]</code>。</p>
+<p><img src="./02.jpg" alt="左右指针法"></p>
+<p>这个图对于单趟排序做了一个简单的说明</p>
+<p>左右指针法代码如下：</p>
+<p><img src="./03.jpg" alt="左右指针法代码实现"></p>
+<h2 id="2、挖坑法："><a href="#2、挖坑法：" class="headerlink" title="2、挖坑法："></a>2、挖坑法：</h2><p>　　挖坑法的思想是类似于左右指针法的，思路是先将最右边的值保存下来，作为 key 值。</p>
+<p>　　这时候最右边的值被取出去，最右边就相当于有了一个坑，我们从左向右进行遍历，找到一个比 key 大的数就把它填到这个坑里，这时候就相当于坑在左边，我们有从右向左进行遍历找比 key 小的数，找到后再次填到坑里。依次类推，大致的思想和上面的解法其实是很相似的。</p>
+<p>挖坑法的代码如下：</p>
+<p><img src="./04.jpg" alt="挖坑法代码实现"></p>
+<h2 id="3、前后指针法："><a href="#3、前后指针法：" class="headerlink" title="3、前后指针法："></a>3、前后指针法：</h2><p>　　前后指针法的思路就是有两个指针，一个为 cur，另一个为 prev。开始的时候让 cur 指向 left，让 prev 指向 left 的前一个位置。让 cur 向后找比 key 小的值，找到之后就让如果此时 prev 与 cur 不相等就让 prev 与 cur 进行交换。</p>
+<p>　　如果找不到比 key 小的值就一直让 cur 向后走，直到走到区间的最右边就停止，当 cur 走到边界的时候就让 cur 与 prev 进行交换。不断缩小边界，相同的方法进行遍历子区间。</p>
+<p>前后指针法的代码：</p>
+<p><img src="./05.jpg" alt="前后指针法代码实现"></p>
+<h1 id="三、快速排序的时间复杂度及其优化"><a href="#三、快速排序的时间复杂度及其优化" class="headerlink" title="三、快速排序的时间复杂度及其优化"></a>三、快速排序的时间复杂度及其优化</h1><hr>
+<p>　　通过上面讲解快速排序的单趟算法我们可以知道，快速排序是将一个问题转化为求解小区间来进行解决。</p>
+<p>　　如果每次我们选的那个 key值刚好是整个区间序列的中间的那个位置，那么它分成的来那个过子区间就会相差不大，这时候我们我们可以把快速排序看成一颗二叉树。图如下：</p>
+<p><img src="./06.jpg" alt="二叉树"></p>
+<p>　　我们可以看到如果选的 key 值的正确位置刚好在这个序列的中间，那么此时可以看成一个二叉树。</p>
+<p>　　这个时候快速排序的时间复杂度是 <code>O(n*lg n)</code>。但是，如果这个 key值得正确位置是在这个区间的最边上，就是说我们选择的这个 key是最大值或者最小值，那么就会产生的一个子区间就是空的，这时候快速排序的时间复杂度就会达到 <code>O(n*n)</code>。</p>
+<p>　　所以，我们需要的是时间复杂度小的快速排序，为此我们就要让快速排序选择的那个 key值都能恰好处在这个序列的中间。于是，我们以此思想来进行优化快速排序。</p>
+<h2 id="优化1-：三数取中法"><a href="#优化1-：三数取中法" class="headerlink" title="优化1 ：三数取中法"></a>优化1 ：三数取中法</h2><p>　　三数取中法就是我们取三个数中间的那个数，这样我们就能在给定的一段区间中找到那个每次出现在中间的那个数。代码如下：</p>
+<p><img src="./07.jpg" alt="三数取中法代码实现"></p>
+<h2 id="优化2-：小区间优化"><a href="#优化2-：小区间优化" class="headerlink" title="优化2 ：小区间优化"></a>优化2 ：小区间优化</h2><p>　　当我们划分的子区间很小的时候（一般情况下13为判断的标准），我们使用快速排序对于这些小区间进行排序的时候，如果我们还使用快速排序的话就会得不偿失。</p>
+<p>　　因为快速排序对子区间的划分就像二叉树一样，越到下面递归越深，那么还不如我们把这剩下的数取出来用其他的排序，这样的话也就提高快速排序的效率。具体代码如下：</p>
+<p><img src="./08.jpg" alt="小区间优化代码实现1"></p>
+<p>　　在这里我给出直接插入排序的代码实现，大家可以看一下。关于直接插入排序我会在以后的博客中会讲的</p>
+<p><img src="./09.jpg" alt="小区间优化代码实现2"></p>
+<h1 id="四、关于快速排序的非递归实现"><a href="#四、关于快速排序的非递归实现" class="headerlink" title="四、关于快速排序的非递归实现"></a>四、关于快速排序的非递归实现</h1><hr>
+<p>　　上面的快速排序使用递归来实现的，我们知道如果递归特别深的情况下就会不断的去创建函数的栈帧，增加了函数调用的开销就会影响函数的执行效率，那么这时采用非递归的快速排序就是非常有必要的。其实说到非递归，就非常简单了，直接使用前面学过的栈来进行实现。</p>
+<p>非递归代码如下：</p>
+<p><img src="./10.jpg" alt="关于快速排序的非递归实现"></p>
+<p>　　上面就是我关于快速排序的介绍，包括快速排序单趟的算法以及它的优化方法。</p>
+<p>　　在快速排序中我们知道它的时间复杂度在 <code>O(lgn）~O(n*n)</code>，在经过我们的优化方法改善之后它的时间复杂度是接近 <code>O(lgn)</code> 的，相对于其他排序来说快速排序时间复杂度还是低的。</p>
+<p>　　以上就是我关于快排的理解，若有问题请指出，谢谢。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>快速排序算法</p><p><a href="http://example.com/2019/06/07/4_%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">http://example.com/2019/06/07/4_%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>MooneyZW</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2019-06-07</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2019-06-10</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="创意社区" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="CC BY 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="CC NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a><a class="icon" rel="noopener" target="_blank" title="CC SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="fab fa-creative-commons-sa"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted" rel="tag" href="/tags/C%E8%AF%AD%E8%A8%80/">C语言, </a><a class="link-muted" rel="tag" href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序 </a></div></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipayqrcode.png" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatqrcode.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2019/06/20/5_%E7%A4%BE%E4%BC%9A%E8%B4%A2%E5%AF%8C%E5%88%86%E9%85%8D/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">富人越富的时代，普通人如何逆袭？</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2019/05/28/3_%E7%B4%A0%E6%95%B0%E5%88%A4%E6%96%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%8F%8A%E5%85%B6%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/"><span class="level-item">素数判断的几种方法代码实现及其复杂度分析</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#一、快速排序的思想"><span class="level-left"><span class="level-item">1</span><span class="level-item">一、快速排序的思想</span></span></a></li><li><a class="level is-mobile" href="#二、快速排序的单趟算法"><span class="level-left"><span class="level-item">2</span><span class="level-item">二、快速排序的单趟算法</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1、左右指针法："><span class="level-left"><span class="level-item">2.1</span><span class="level-item">1、左右指针法：</span></span></a></li><li><a class="level is-mobile" href="#2、挖坑法："><span class="level-left"><span class="level-item">2.2</span><span class="level-item">2、挖坑法：</span></span></a></li><li><a class="level is-mobile" href="#3、前后指针法："><span class="level-left"><span class="level-item">2.3</span><span class="level-item">3、前后指针法：</span></span></a></li></ul></li><li><a class="level is-mobile" href="#三、快速排序的时间复杂度及其优化"><span class="level-left"><span class="level-item">3</span><span class="level-item">三、快速排序的时间复杂度及其优化</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#优化1-：三数取中法"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">优化1 ：三数取中法</span></span></a></li><li><a class="level is-mobile" href="#优化2-：小区间优化"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">优化2 ：小区间优化</span></span></a></li></ul></li><li><a class="level is-mobile" href="#四、关于快速排序的非递归实现"><span class="level-left"><span class="level-item">4</span><span class="level-item">四、关于快速排序的非递归实现</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Zhang&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2021 MooneyZW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> <i class="fab fa-creative-commons-nc"></i> <i class="fab fa-creative-commons-sa"></i> </a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="GitHub" href="https://github.com/local-host-8080/"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/live2d-widget/autoload.js"></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

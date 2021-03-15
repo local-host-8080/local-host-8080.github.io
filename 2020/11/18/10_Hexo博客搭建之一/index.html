@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Hexo + icarus 博客搭建（一） - Zhang&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Zhang&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Zhang&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta description="本文主要介绍 Hexo + icarus 基础环境搭建，包含 Hexo 框架的下载安装，icarus 及其组件的下载安装，完成以下操作步骤将初步完成 Hexo 博客 + icarus 主题的配置。后续将对 Hexo 博客进行功能扩展。 来到这里相信你已经正确安装 Hexo 博客的基础运行环境了。"><meta property="og:type" content="blog"><meta property="og:title" content="Hexo + icarus 博客搭建（一）"><meta property="og:url" content="http://example.com/2020/11/18/10_Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E4%B8%80/"><meta property="og:site_name" content="Zhang&#039;s Blog"><meta property="og:description" content="本文主要介绍 Hexo + icarus 基础环境搭建，包含 Hexo 框架的下载安装，icarus 及其组件的下载安装，完成以下操作步骤将初步完成 Hexo 博客 + icarus 主题的配置。后续将对 Hexo 博客进行功能扩展。 来到这里相信你已经正确安装 Hexo 博客的基础运行环境了。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/gallery/covers/001_cover.svg"><meta property="article:published_time" content="2020-11-18T10:00:00.000Z"><meta property="article:modified_time" content="2020-11-18T10:00:00.000Z"><meta property="article:author" content="MooneyZW"><meta property="article:tag" content="博客"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/gallery/covers/001_cover.svg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2020/11/18/10_Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E4%B8%80/"},"headline":"Zhang's Blog","image":[],"datePublished":"2020-11-18T10:00:00.000Z","dateModified":"2020-11-18T10:00:00.000Z","author":{"@type":"Person","name":"MooneyZW"},"description":"本文主要介绍 Hexo + icarus 基础环境搭建，包含 Hexo 框架的下载安装，icarus 及其组件的下载安装，完成以下操作步骤将初步完成 Hexo 博客 + icarus 主题的配置。后续将对 Hexo 博客进行功能扩展。 来到这里相信你已经正确安装 Hexo 博客的基础运行环境了。"}</script><link rel="canonical" href="http://example.com/2020/11/18/10_Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E4%B8%80/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Zhang's Blog" type="application/atom+xml">
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Zhang&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/gallery/covers/001_cover.svg" alt="Hexo + icarus 博客搭建（一）"></span></div><article class="card-content article" role="article"><h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal"><i class="fas fa-angle-double-right"></i>Hexo + icarus 博客搭建（一）</h1><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="${date_xml(page.date)}" title="${date_xml(page.date)}">2020-11-18</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="${date_xml(page.updated)}" title="${date_xml(page.updated)}">2020-11-18</time></span><span class="level-item"><a class="link-muted" href="/categories/Hexo/">Hexo</a><span> / </span><a class="link-muted" href="/categories/Hexo/icarus/">icarus</a></span><span class="level-item">7 分钟读完 (大约1094个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><div class="content"><p>本文主要介绍 Hexo + icarus 基础环境搭建，包含 Hexo 框架的下载安装，icarus 及其组件的下载安装，完成以下操作步骤将初步完成 Hexo 博客 + icarus 主题的配置。后续将对 Hexo 博客进行功能扩展。</p>
+<p>来到这里相信你已经正确安装 Hexo 博客的基础运行环境了。</p>
+<a id="more"></a>
+
+<p>即：</p>
+<ol>
+<li>已安装 <a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git --version	  <span class="comment"># 查看 git 版本</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>已安装 <a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a> (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本)</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v		<span class="comment"># 查看 node.js 版本</span></span><br><span class="line">$ npm -v  		<span class="comment"># 查看 npm 包管理器版本</span></span><br></pre></td></tr></table></figure>
+
+<p>如未正确安装，请参照 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a> 进行安装，以下操作均基于Windows平台。</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo 框架。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli	<span class="comment"># 全局安装 Hexo 框架</span></span><br></pre></td></tr></table></figure>
+
+<p>查看 Hexo 版本，检查是否安装成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="Hexo-初始化"><a href="#Hexo-初始化" class="headerlink" title="Hexo 初始化"></a>Hexo 初始化</h2><p>在任意位置新建一个文件夹，取名 <code>blog</code>，在<code>blog/</code> 目录下 打开 <code>CMD</code> 窗口，运行以下命令，进行 Hexo 框架初始化。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init  <span class="comment"># Hexo 初始化</span></span><br></pre></td></tr></table></figure>
+<p><img src="./01_Hexo%E5%88%9D%E5%A7%8B%E5%8C%96.png" alt="Hexo初始化"></p>
+<h2 id="下载icarus主题"><a href="#下载icarus主题" class="headerlink" title="下载icarus主题"></a>下载icarus主题</h2><p>运行下列命令以下载 icarus 主题，此处可能下载较慢，请耐心等待。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus</span><br></pre></td></tr></table></figure>
+<p><img src="./02_%E4%B8%8B%E8%BD%BDicarus%E4%B8%BB%E9%A2%98.png" alt="下载icarus主题"></p>
+<h2 id="切换icarus主题"><a href="#切换icarus主题" class="headerlink" title="切换icarus主题"></a>切换icarus主题</h2><p>打开 <code>_config.yml</code> 文件，将 <code>thems</code> 项的值更改为 <code>icarus</code></p>
+<p><img src="./03_%E5%88%87%E6%8D%A2icarus%E4%B8%BB%E9%A2%98.png" alt="切换icarus主题"></p>
+<h2 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g	<span class="comment"># 生成静态页面</span></span><br></pre></td></tr></table></figure>
+
+<p>这里会提示错误 ERROR<br><img src="./04_%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF.png" alt="错误信息"></p>
+<p>我们根据上图中的错误提示安装 <code>icarus</code> 主题所需组件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save bulma-stylus@0.8.0 hexo-renderer-inferno@^0.1.3 hexo-component-inferno@^0.10.1 inferno@^7.3.3 inferno-create-element@^7.3.3</span><br></pre></td></tr></table></figure>
+
+<p>再依次运行命令行，重新生成静态页面，并启动 Hexo 服务。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g	<span class="comment"># 生成静态页面</span></span><br><span class="line">$ hexo s	<span class="comment"># 启动服务</span></span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器输入下列网址预览效果。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加-自定义页面"><a href="#添加-自定义页面" class="headerlink" title="添加 自定义页面"></a>添加 自定义页面</h2><ul>
+<li>新建一个 <strong>分类</strong> 页面</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>新建一个 <strong>标签</strong> 页面</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>新建一个 <strong>关于我</strong> 页面</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">&quot;about&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="./05_AboutMe.png" alt="AboutMe"></p>
+<ul>
+<li>新建一个 <strong>自定义</strong> 页面</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">&quot;guestbook&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>接着在主题的 <code>_config.yml</code> 文件中的 <code>menu</code> 中进行配置，<code>icarus</code> 主题在 <code>_config.icarus.yml</code> 文件中的 <code>navbar</code> –&gt; <code>menu</code> 中进行配置，如图。</p>
+<p><img src="./06_%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2.png" alt="自定义页面"></p>
+<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;	</span><br><span class="line"><span class="comment"># layout布局默认为post，有三种默认布局即post、page 和 draft，在创建者三种不同类型的文件时，它们将会被保存到不同的路径；</span></span><br><span class="line"><span class="comment"># 而您自定义的其他布局和 post 相同，都将储存到 source/_posts 文件夹。</span></span><br></pre></td></tr></table></figure>
+<p>新建一篇文章示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new 第一篇文章的名字</span><br></pre></td></tr></table></figure>
+
+<p>在此之前通常建议开启 <code>_config.yml</code> 中的资源文件夹，以便创建文章的同时，自动为你创建同名资源文件夹，这通常用于存放你在本篇文章所用到的图片等资源。存在此文件夹中的图片，Hexo 生成静态页面时，将会将二者存放在同一文件夹下。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span>		<span class="comment"># 开启文章资源文件夹</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>在正式开始部署上传到 GitHub 上前，通常建议配置 SSH 秘钥，这样不用每次上传部署都要进行登录验证，有关如何配置 SSH 秘钥，请参阅</p>
+<p>————–此处省略10000字————————-</p>
+<p>————–挖坑1：GitHub 添加 SSH—————</p>
+<p>————–挖坑2：GitHub 静态页面—————</p>
+<ul>
+<li>首先在<code>_config.yml</code>中修改添加以下内容，指定部署上传的 GitHub 库。</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:local-host-8080/local-host-8080.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  </span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span> </span><br><span class="line">  <span class="attr">branch:</span> [<span class="string">branch</span>]</span><br><span class="line">  <span class="attr">message:</span> [<span class="string">message</span>]<span class="attr">Site updated:</span> &#123;&#123; <span class="string">now(&#x27;YYYY-MM-DD</span> <span class="string">HH:mm:ss&#x27;)</span> &#125;&#125;<span class="string">)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装 <code>git</code> 组件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>此外，如果您的 Github Pages 需要使用 CNAME 文件<strong>自定义域名</strong>，请将 CNAME 文件置于 <code>source/</code> 目录下，只有这样 <code>hexo deploy</code> 才能将 CNAME 文件一并推送至部署分支。</p>
+<ul>
+<li>上传至GitHub<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>暂时就这样…</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Hexo + icarus 博客搭建（一）</p><p><a href="http://example.com/2020/11/18/10_Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E4%B8%80/">http://example.com/2020/11/18/10_Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E4%B8%80/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>MooneyZW</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2020-11-18</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2020-11-18</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="创意社区" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="CC BY 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="CC NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a><a class="icon" rel="noopener" target="_blank" title="CC SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="fab fa-creative-commons-sa"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted" rel="tag" href="/tags/%E5%8D%9A%E5%AE%A2/">博客 </a></div></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipayqrcode.png" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatqrcode.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/11/19/11_Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E4%BA%8C/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Hexo + icarus 博客搭建（二）</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2019/07/01/6_Git%E9%85%8D%E7%BD%AESSH%E7%A7%98%E9%92%A5/"><span class="level-item">Git配置SSH秘钥</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#安装Hexo"><span class="level-left"><span class="level-item">1</span><span class="level-item">安装Hexo</span></span></a></li><li><a class="level is-mobile" href="#Hexo-初始化"><span class="level-left"><span class="level-item">2</span><span class="level-item">Hexo 初始化</span></span></a></li><li><a class="level is-mobile" href="#下载icarus主题"><span class="level-left"><span class="level-item">3</span><span class="level-item">下载icarus主题</span></span></a></li><li><a class="level is-mobile" href="#切换icarus主题"><span class="level-left"><span class="level-item">4</span><span class="level-item">切换icarus主题</span></span></a></li><li><a class="level is-mobile" href="#启动Hexo"><span class="level-left"><span class="level-item">5</span><span class="level-item">启动Hexo</span></span></a></li><li><a class="level is-mobile" href="#添加-自定义页面"><span class="level-left"><span class="level-item">6</span><span class="level-item">添加 自定义页面</span></span></a></li><li><a class="level is-mobile" href="#写作"><span class="level-left"><span class="level-item">7</span><span class="level-item">写作</span></span></a></li><li><a class="level is-mobile" href="#部署"><span class="level-left"><span class="level-item">8</span><span class="level-item">部署</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Zhang&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2021 MooneyZW</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> <i class="fab fa-creative-commons-nc"></i> <i class="fab fa-creative-commons-sa"></i> </a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="GitHub" href="https://github.com/local-host-8080/"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/live2d-widget/autoload.js"></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
